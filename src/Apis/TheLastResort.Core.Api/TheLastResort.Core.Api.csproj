@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>bf5b3de1-8c62-4bfe-8503-e4186771c985</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domains\TheLastResort.Core.Domain\TheLastResort.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructures\TheLastResort.Core.Infrastructure\TheLastResort.Core.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
