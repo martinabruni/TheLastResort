@@ -29,21 +29,21 @@ public partial class SqldbThelastresortCoreDevContext : DbContext
     {
         modelBuilder.Entity<ApartmentEntity>(entity =>
         {
-            entity.HasKey(e => e.BuildingId).HasName("PK__Apartmen__5463CDC4096F57E4");
+            entity.HasKey(e => e.Id).HasName("PK__Apartmen__3214EC077D46E4EA");
 
             entity.ToTable("ApartmentEntity");
 
-            entity.Property(e => e.BuildingId).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.ManagerPhone).HasMaxLength(50);
 
             entity.HasOne(d => d.Building).WithOne(p => p.ApartmentEntity)
-                .HasForeignKey<ApartmentEntity>(d => d.BuildingId)
+                .HasForeignKey<ApartmentEntity>(d => d.Id)
                 .HasConstraintName("FK_ApartmentEntity_BuildingEntity");
         });
 
         modelBuilder.Entity<BuildingEntity>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Building__3214EC07FE2CE99B");
+            entity.HasKey(e => e.Id).HasName("PK__Building__3214EC07013ABE50");
 
             entity.ToTable("BuildingEntity");
 
@@ -57,21 +57,21 @@ public partial class SqldbThelastresortCoreDevContext : DbContext
 
         modelBuilder.Entity<HotelEntity>(entity =>
         {
-            entity.HasKey(e => e.BuildingId).HasName("PK__HotelEnt__5463CDC40C2CBF9D");
+            entity.HasKey(e => e.Id).HasName("PK__HotelEnt__3214EC07296D956C");
 
             entity.ToTable("HotelEntity");
 
-            entity.Property(e => e.BuildingId).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Address).HasMaxLength(255);
 
             entity.HasOne(d => d.Building).WithOne(p => p.HotelEntity)
-                .HasForeignKey<HotelEntity>(d => d.BuildingId)
+                .HasForeignKey<HotelEntity>(d => d.Id)
                 .HasConstraintName("FK_HotelEntity_BuildingEntity");
         });
 
         modelBuilder.Entity<LogEntity>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__LogEntit__3214EC0719F8C45A");
+            entity.HasKey(e => e.Id).HasName("PK__LogEntit__3214EC073328503B");
 
             entity.ToTable("LogEntity");
 
@@ -82,7 +82,7 @@ public partial class SqldbThelastresortCoreDevContext : DbContext
 
         modelBuilder.Entity<ReservationEntity>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Reservat__3214EC078382F874");
+            entity.HasKey(e => e.Id).HasName("PK__Reservat__3214EC07F9E6A04E");
 
             entity.ToTable("ReservationEntity");
 
@@ -109,7 +109,7 @@ public partial class SqldbThelastresortCoreDevContext : DbContext
 
         modelBuilder.Entity<UserEntity>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UserEnti__3214EC07EB5B6B7A");
+            entity.HasKey(e => e.Id).HasName("PK__UserEnti__3214EC074A1766AB");
 
             entity.ToTable("UserEntity");
 
