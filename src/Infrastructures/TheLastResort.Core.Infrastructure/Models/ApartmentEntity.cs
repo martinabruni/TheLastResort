@@ -1,8 +1,10 @@
-﻿namespace TheLastResort.Core.Infrastructure.Models;
+﻿using TheLastResort.Core.Domain.Interfaces;
 
-public partial class ApartmentEntity
+namespace TheLastResort.Core.Infrastructure.Models;
+
+public partial class ApartmentEntity : IEntity<Guid>
 {
-    public Guid BuildingId { get; set; }
+    public Guid Id { get; set; }
 
     public string ManagerPhone { get; set; } = null!;
 

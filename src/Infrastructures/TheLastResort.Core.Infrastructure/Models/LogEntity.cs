@@ -1,6 +1,8 @@
-﻿namespace TheLastResort.Core.Infrastructure.Models;
+﻿using TheLastResort.Core.Domain.Interfaces;
 
-public partial class LogEntity
+namespace TheLastResort.Core.Infrastructure.Models;
+
+public partial class LogEntity : IEntity<int>
 {
     public int Id { get; set; }
 

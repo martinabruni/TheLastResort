@@ -4,16 +4,16 @@ namespace TheLastResort.Core.Domain.Interfaces
 {
     public interface IRepository<TEntity, TKey> where TEntity : class, IEntity<TKey>
     {
-        Task<bool> AddAsync(TEntity entity, params Expression<Func<>>);
+        Task<TEntity?> AddAsync(TEntity entity);
 
-        Task<bool> UpdateAsync(TEntity entity);
+        Task<TEntity?> UpdateAsync(TEntity entity);
 
-        Task<bool> DeleteAsync(TKey id);
+        Task<TEntity?> DeleteAsync(TKey id);
 
-        Task<bool> GetAsync(TKey id);
+        Task<TEntity?> GetAsync(TKey id, params Expression<Func<TEntity, object>>[] includes);
 
-        Task<bool> GetAsync();
+        Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>>? filter = null);
 
-        Task<bool> ExistsAsync(TKey id);
+        Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> filter);
     }
 }
